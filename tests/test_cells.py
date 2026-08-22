@@ -46,6 +46,9 @@ def test_cell_len_short_string():
 
 
 def test_set_cell_size():
+    assert cells.set_cell_size("foo", -1) == ""
+    assert cells.set_cell_size("f", -1) == ""
+    assert cells.set_cell_size("😽😽", -1) == ""
     assert cells.set_cell_size("foo", 0) == ""
     assert cells.set_cell_size("f", 0) == ""
     assert cells.set_cell_size("", 0) == ""
